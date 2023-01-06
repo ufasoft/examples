@@ -26,9 +26,6 @@ public partial class Form1 : Form
 		Player = new WMPLib.WindowsMediaPlayer();
 		Player.PlayStateChange += new WMPLib._WMPOCXEvents_PlayStateChangeEventHandler(Player_PlayStateChange);
 		Player.MediaError += new WMPLib._WMPOCXEvents_MediaErrorEventHandler(Player_MediaError);
-		Player.enabled = true;
-		Player.windowlessVideo = true;
-		Player.uiMode = "full";
 		Player.openPlayer(url);
 	}
 
