@@ -24,13 +24,12 @@ public partial class Form1 : Form
 	private void PlayFile(String url)
 	{
 		Player = new WMPLib.WindowsMediaPlayer();
-		Player.openPlayer(url);
 		Player.PlayStateChange += new WMPLib._WMPOCXEvents_PlayStateChangeEventHandler(Player_PlayStateChange);
 		Player.MediaError += new WMPLib._WMPOCXEvents_MediaErrorEventHandler(Player_MediaError);
 		Player.enabled = true;
 		Player.windowlessVideo = true;
 		Player.uiMode = "full";
-		Player.controls.play();
+		Player.openPlayer(url);
 	}
 
 	private void Player_PlayStateChange(int NewState)
